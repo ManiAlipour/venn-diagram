@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+body{
+    font-size: 16px;
+    direction: rtl;
+}
+tspan{
+    font-size: 15px;
+    font-weight: bolder;
+    color: black !important;
+}
+@media screen and (max-width: 768px) {
+    tspan{
+        font-size: 13px;
+    }
+}
+
+*::-webkit-scrollbar{
+    display: none;
+}

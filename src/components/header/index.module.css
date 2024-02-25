@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 15vh ;
+    box-shadow: 0 0 10px 4px #ccc;
+    padding: 10px 15px;
+}
+
+.brandName{
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    color: rgb(124, 12, 230);
+}
+.venn{
+    font-family: "Overpass", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}

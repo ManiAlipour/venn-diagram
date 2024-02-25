@@ -1,0 +1,66 @@
+.formContainer{
+    background-image: url(./bac.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: heu-rotate(90deg);
+    height: 90vh;
+}
+.titleDesc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 5vh;
+    color: white;
+    font-weight: bolder;
+}
+.title{
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+.form{
+    /* background-color: rgba(0, 0, 0, 0.389); */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5vh;
+}
+.input{
+    height: 40px;
+    border: 2px solid rgb(124, 12, 230);
+    border-radius: 10px;
+    padding: 10px 1vw;
+    outline: none;
+    margin: 30px auto;
+    margin-top: 10px !important;
+}
+.input:focus{
+    outline: none;
+}
+.lable{
+    margin-bottom: 20px;
+}
+.subBtn{
+    background-color: rgb(124, 12, 230);
+    color: white;
+    padding: 8px 16px;
+    font-size: larger;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transform: .3s linear;
+}
+.subBtn:hover{
+    background-color: rgb(81, 5, 153);
+}
+.points{
+    /* height: 100%; */
+    /* background-color: rgba(0, 0, 0, 0.389); */
+    color: white;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
