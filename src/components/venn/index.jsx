@@ -25,20 +25,11 @@ const Venn = ({ data: d }) => {
     // Calculate difference and convert to string
     let difference_b = set2.filter((m) => !set1.includes(m));
     let difference_a = set1.filter((m) => !set2.includes(m));
-    difference_a = String(difference_a);
-    difference_b = String(difference_b);
-    subscription = String(subscription);
 
     return { subscription, unionStr, difference_b, difference_a };
   };
 
   let { subscription, unionStr, difference_b, difference_a } = calc(set1, set2);
-
-  // function CallStyleDiagram(chart) {
-  //   chart.title(":نمودار ون شما");
-  //   chart.labels().format("{%Name}");
-  //   chart.background().fill("#c39bd2").stroke("#fff", 3).cornerType("round");
-  // }
 
   // draw Venn Diagram with set1 and set2
   useEffect(() => {
@@ -64,18 +55,22 @@ const Venn = ({ data: d }) => {
         ></div>
       </div>
       <table className={`${styles.table}`}>
-        <tr className={`${styles.tr}`}>
-          <th>اجتماع</th>
-          <th>a تفاضل</th>
-          <th>b تفاضل</th>
-          <th>اشتراک</th>
-        </tr>
-        <tr className={`${styles.tr}`}>
-          <td>{unionStr}</td>
-          <td>{difference_a}</td>
-          <td>{difference_b}</td>
-          <td>{subscription}</td>
-        </tr>
+        <thead>
+          <tr className={`${styles.tr}`}>
+            <th>اجتماع</th>
+            <th>a تفاضل</th>
+            <th>b تفاضل</th>
+            <th>اشتراک</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className={`${styles.tr}`}>
+            <td>{unionStr}</td>
+            <td>{difference_a}</td>
+            <td>{difference_b}</td>
+            <td>{subscription}</td>
+          </tr>
+        </tbody>
       </table>
     </>
   );

@@ -13,16 +13,6 @@ body{
     font-size: 16px;
     direction: rtl;
 }
-tspan{
-    font-size: 15px;
-    font-weight: bolder;
-    color: black !important;
-}
-@media screen and (max-width: 768px) {
-    tspan{
-        font-size: 13px;
-    }
-}
 
 *::-webkit-scrollbar{
     display: none;
