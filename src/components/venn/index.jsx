@@ -34,14 +34,16 @@ const Venn = ({ data: d }) => {
   // draw Venn Diagram with set1 and set2
   useEffect(() => {
     let chart1 = anychart.venn([
-      { x: "A", name: difference_a, value: set1.length },
-      { x: "B", name: difference_b, value: set2.length },
-      { x: ["A", "B"], name: subscription, value: subscription.length },
+      { x: "A", label:"A", name: difference_a, value: set1.length },
+      { x: "B", label:"B", name: difference_b, value: set2.length },
+      { x: ["A", "B"],label:"A,B", name: subscription, value: subscription.length },
     ]);
     chart1.container("container");
-    // CallStyleDiagram(chart1);
     chart1.title(":نمودار ون شما");
-    chart1.labels().format("{%Name}");
+    chart1.fill("#a569bd");
+    chart1.labels(true)
+    chart1.stroke("white",5)
+    chart1.labels().format("{%Label}\n\n\n{%Name}");
     chart1.draw();
   }, [set1, set2]);
 
@@ -58,17 +60,17 @@ const Venn = ({ data: d }) => {
         <thead>
           <tr className={`${styles.tr}`}>
             <th>اجتماع</th>
-            <th>a تفاضل</th>
-            <th>b تفاضل</th>
+            <th>A - B</th>
+            <th>B - A</th>
             <th>اشتراک</th>
           </tr>
         </thead>
         <tbody>
           <tr className={`${styles.tr}`}>
             <td>{unionStr}</td>
-            <td>{difference_a}</td>
-            <td>{difference_b}</td>
-            <td>{subscription}</td>
+            <td>{String(difference_a) || "{}"}</td>
+            <td>{String(difference_b) || "{}"}</td>
+            <td>{String(subscription) || "{}"}</td>
           </tr>
         </tbody>
       </table>
