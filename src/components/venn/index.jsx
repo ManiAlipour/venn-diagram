@@ -31,18 +31,27 @@ const Venn = ({ data: d }) => {
 
   let { subscription, unionStr, difference_b, difference_a } = calc(set1, set2);
 
+  // handle lable bugs
+  const lableAB =
+    difference_a === subscription || difference_b == subscription ? "A,B" : "";
+
   // draw Venn Diagram with set1 and set2
   useEffect(() => {
     let chart1 = anychart.venn([
-      { x: "A", label:"A", name: difference_a, value: set1.length },
-      { x: "B", label:"B", name: difference_b, value: set2.length },
-      { x: ["A", "B"],label:"A,B", name: subscription, value: subscription.length },
+      { x: "A", label: "A", name: difference_a, value: set1.length },
+      { x: "B", label: "B", name: difference_b, value: set2.length },
+      {
+        x: ["A", "B"],
+        label: lableAB,
+        name: subscription,
+        value: subscription.length,
+      },
     ]);
     chart1.container("container");
     chart1.title(":نمودار ون شما");
     chart1.fill("#a569bd");
-    chart1.labels(true)
-    chart1.stroke("white",5)
+    chart1.labels(true);
+    chart1.stroke("white", 5);
     chart1.labels().format("{%Label}\n\n\n{%Name}");
     chart1.draw();
   }, [set1, set2]);
